@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=2, user-scalable=no" name="viewport" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta content="#0074BE" name="theme-color" />
+    <title>Aplikasi Miko</title>
+    <link rel="stylesheet" href="css/semantic.min.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/pandoc-code-highlight.css">
+    <script src="js/jquery.min.js"></script>
+    <script src="js/semantic.min.js"></script>
+    <link rel="stylesheet" href="css/calendar.css">
+   
+</head>
+<body>
+
+    <!-- pusher -->
+    <div class="pusher">
+        
+
+            <div class="header">
+                <div class="ui large top  fixed top pointing menu navbar">
+                    <div class="ui container grid menu">
+                        <div class="two wide column ">
+                            <div class="logo item">
+                                <a onclick="goBack()">
+                                    
+                                <i class="big chevron left icon"></i>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="twelve wide column ">
+                            <div class="logo item">
+                                
+                                <span class="ui header center aligned">Atur Jadwal</span>
+                            </div>
+                        </div>
+                        <div class="two wide column ">
+                            <div class="logo item">
+                                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            
+
+            
+
+            <!-- Konten -->
+
+            <div class="konten">
+
+                
+                
+                <div id="content" class="ui row">
+                    <div class="month">      
+                        <ul>
+                          <li class="prev">&#10094;</li>
+                          <li class="next">&#10095;</li>
+                          <li>
+                            Desember<br>
+                            <span style="font-size:18px">2018</span>
+                          </li>
+                        </ul>
+                      </div>
+                      
+                      <ul class="weekdays">
+                        <li>Mo</li>
+                        <li>Tu</li>
+                        <li>We</li>
+                        <li>Th</li>
+                        <li>Fr</li>
+                        <li>Sa</li>
+                        <li>Su</li>
+                      </ul>
+                      
+                      <ul class="days">  
+                          
+                        <li>1</li>
+                        <li>2</li>
+                        <li>3</li>
+                        <li>4</li>
+                        <li>5</li>
+                        <li>6</li>
+                        <li>7</li>
+                        <li>8</li>
+                        <li>9</li>
+                        <li>10</li>
+                        <li><span class="active">11</span></li>
+                        <li>12</li>
+                        <li>13</li>
+                        <li>14</li>
+                        <li>15</li>
+                        <li>16</li>
+                        <li>17</li>
+                        <li>18</li>
+                        <li>19</li>
+                        <li>20</li>
+                        <li>21</li>
+                        <li>22</li>
+                        <li>23</li>
+                        <li>24</li>
+                        <li>25</li>
+                        <li>26</li>
+                        <li>27</li>
+                        <li>28</li>
+                        <li>29</li>
+                        <li>30</li>
+                      </ul>
+                      
+                        
+                </div>
+
+                <div class="ui segment jarak grid">
+                    <div class="sixteen wide column">
+                        <h3>Atur Jadwal</h3>
+                        <form action="list-psikolog.html" class="form-register ui form">
+                            <div class="input-group">
+                                <label for="email" id="label">Judul</label>
+                                <input type="text" name="nama" autofocus>
+                            </div>
+                            
+                            <div class="input-group ui form">
+                                <label id="label">Deskripsi</label>
+                                <textarea class="ui fluid" rows="4"></textarea>
+                            </div>    
+                            <div class="input-group">
+                                <button class="ui button fluid primary" type="submit">Simpan</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                
+            
+            <!-- End Konten -->
+            </div>
+                
+           
+
+
+            
+
+
+        </div>
+        
+
+        
+        
+    <!-- End Pusher -->
+    </div>
+
+    
+    
+       
+          
+
+        
+    <script>
+        function goBack() {
+            window.history.back();
+        }
+
+        $(document).ready(function() {
+            
+            $('#calendar').fullCalendar({
+                header: {
+                    left: 'prev,next today',
+                    center: 'title',
+                    right: 'month,basicWeek,basicDay'
+                },
+                defaultDate: '2016-12-12',
+                navLinks: true, // can click day/week names to navigate views
+                editable: true,
+                eventLimit: true, // allow "more" link when too many events
+                events: [
+                    {
+                        title: 'All Day Event',
+                        start: '2016-12-01'
+                    },
+                    {
+                        title: 'Long Event',
+                        start: '2016-12-07',
+                        end: '2016-12-10'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2016-12-09T16:00:00'
+                    },
+                    {
+                        id: 999,
+                        title: 'Repeating Event',
+                        start: '2016-12-16T16:00:00'
+                    },
+                    {
+                        title: 'Conference',
+                        start: '2016-12-11',
+                        end: '2016-12-13'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2016-12-12T10:30:00',
+                        end: '2016-12-12T12:30:00'
+                    },
+                    {
+                        title: 'Lunch',
+                        start: '2016-12-12T12:00:00'
+                    },
+                    {
+                        title: 'Meeting',
+                        start: '2016-12-12T14:30:00'
+                    },
+                    {
+                        title: 'Happy Hour',
+                        start: '2016-12-12T17:30:00'
+                    },
+                    {
+                        title: 'Dinner',
+                        start: '2016-12-12T20:00:00'
+                    },
+                    {
+                        title: 'Birthday Party',
+                        start: '2016-12-13T07:00:00'
+                    },
+                    {
+                        title: 'Click for Google',
+                        url: 'https://google.com/',
+                        start: '2016-12-28'
+                    }
+                ]
+            });
+		
+	});
+
+
+
+    </script>
+  
+</body>
+</html>
