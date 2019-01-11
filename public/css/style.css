@@ -46,10 +46,7 @@ body.pushable, .navbar{
     background-color: white !important;
 }
 .hide{
-    display: none;
-}
-.topup{
-    display: block;
+    opacity: 0;
 }
 .jarak-mini{
     padding: 1px 0 !important;

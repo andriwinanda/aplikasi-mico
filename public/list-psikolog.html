@@ -55,7 +55,7 @@
             <div class="konten">
 
                  <div class="ui fluid action input segment" style="border-radius:0 !important">
-                    <input type="text" placeholder="Search...">
+                    <input id="search" type="text" placeholder="Search..."  onkeyup="pencarian()" >
                     <button class="ui icon button">
                         <i class="search icon"></i>
                     </button>
@@ -72,7 +72,7 @@
 
 
                    
-                        <a href="chat.html" class="ui segment jarak grid">
+                        <a href="chat.html" class="ui segment jarak grid list_psy">
                             <div class="four wide column middle aligned">
                                 <div class="item">
                                     <img class="ui big circular image" src="img/profil.png" alt="">
@@ -81,7 +81,7 @@
                             </div>
                             <div class="ten wide column middle aligned">
                                 <div class="item">
-                                    <span class="no-margin text-blue ui header">Prof. Andri Winanda</span>
+                                    <span class="no-margin text-blue ui header nama_psy">Prof. Andri Winanda</span>
                                     <br>
                                     <span>Ahli Kejiwaan</span>
                                     <br>
@@ -95,7 +95,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="chat.html" class="ui segment jarak grid">
+                        <a href="chat.html" class="ui segment jarak grid list_psy">
                             <div class="four wide column middle aligned">
                                 <div class="item">
                                     <img class="ui big circular image" src="img/profil.png" alt="">
@@ -104,7 +104,7 @@
                             </div>
                             <div class="ten wide column middle aligned">
                                 <div class="item">
-                                    <span class="no-margin text-blue ui header">Prof. Andri Winanda</span>
+                                    <span class="no-margin text-blue ui header nama_psy">Prof. Iqbaal</span>
                                     <br>
                                     <span>Ahli Kejiwaan</span>
                                     <br>
@@ -118,98 +118,7 @@
                                 </div>
                             </div>
                         </a>
-                        <a href="chat.html" class="ui segment jarak grid">
-                            <div class="four wide column middle aligned">
-                                <div class="item">
-                                    <img class="ui big circular image" src="img/profil.png" alt="">
-                                    
-                                </div>
-                            </div>
-                            <div class="ten wide column middle aligned">
-                                <div class="item">
-                                    <span class="no-margin text-blue ui header">Prof. Andri Winanda</span>
-                                    <br>
-                                    <span>Ahli Kejiwaan</span>
-                                    <br>
-                                    <span>15 koin / 15mnt</span>
-                                </div>
-                            </div>
-                            <div class="two wide column middle aligned">
-                                <div class="item center aligned">
-                                    <i class="large heart icon"></i>
-                                    100
-                                </div>
-                            </div>
-                        </a>
-                        <a href="chat.html" class="ui segment jarak grid">
-                            <div class="four wide column middle aligned">
-                                <div class="item">
-                                    <img class="ui big circular image" src="img/profil.png" alt="">
-                                    
-                                </div>
-                            </div>
-                            <div class="ten wide column middle aligned">
-                                <div class="item">
-                                    <span class="no-margin text-blue ui header">Prof. Andri Winanda</span>
-                                    <br>
-                                    <span>Ahli Kejiwaan</span>
-                                    <br>
-                                    <span>15 koin / 15mnt</span>
-                                </div>
-                            </div>
-                            <div class="two wide column middle aligned">
-                                <div class="item center aligned">
-                                    <i class="large heart icon"></i>
-                                    100
-                                </div>
-                            </div>
-                        </a>
-                        <a href="chat.html" class="ui segment jarak grid">
-                            <div class="four wide column middle aligned">
-                                <div class="item">
-                                    <img class="ui big circular image" src="img/profil.png" alt="">
-                                    
-                                </div>
-                            </div>
-                            <div class="ten wide column middle aligned">
-                                <div class="item">
-                                    <span class="no-margin text-blue ui header">Prof. Andri Winanda</span>
-                                    <br>
-                                    <span>Ahli Kejiwaan</span>
-                                    <br>
-                                    <span>15 koin / 15mnt</span>
-                                </div>
-                            </div>
-                            <div class="two wide column middle aligned">
-                                <div class="item center aligned">
-                                    <i class="large heart icon"></i>
-                                    100
-                                </div>
-                            </div>
-                        </a>
-                        <a href="chat.html" class="ui segment jarak grid">
-                            <div class="four wide column middle aligned">
-                                <div class="item">
-                                    <img class="ui big circular image" src="img/profil.png" alt="">
-                                    
-                                </div>
-                            </div>
-                            <div class="ten wide column middle aligned">
-                                <div class="item">
-                                    <span class="no-margin text-blue ui header">Prof. Andri Winanda</span>
-                                    <br>
-                                    <span>Ahli Kejiwaan</span>
-                                    <br>
-                                    <span>15 koin / 15mnt</span>
-                                </div>
-                            </div>
-                            <div class="two wide column middle aligned">
-                                <div class="item center aligned">
-                                    <i class="large heart icon"></i>
-                                    100
-                                </div>
-                            </div>
-                        </a>
+                        
                         
                     
                         
@@ -225,12 +134,6 @@
                     Lewati, Tanya Gratis
                 </a>
             </div>
-                
-           
-
-
-            
-
 
         </div>
         
@@ -250,6 +153,26 @@
         function goBack() {
             window.history.back();
         }
+        function pencarian(){
+            var nama_psy = document.getElementsByClassName("nama_psy").innerHtml;
+            var cari = document.getElementById("search").innerHTML.toUpperCase();
+            list_psy = document.getElementsByClassName("list_psy");
+
+            for (i = 1; i < list_psy.length; i++) {
+                baris = nama_psy[i].getElementsByClassName("nama_psy")[i];
+                if (baris) {
+                    txtValue = baris.textContent || baris.innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        list_psy[i].style.display = "";
+                    } else {
+                        list_psy[i].style.display = "none";
+                    }
+                } 
+            }
+        }
+
+
+
     </script>
   
 </body>

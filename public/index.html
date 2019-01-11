@@ -179,16 +179,21 @@
     <script src="https://www.gstatic.com/firebasejs/4.9.0/firebase.js"></script>
     <script src="js/script.js"></script> 
     <script>
+        
         firebase.auth().onAuthStateChanged(function(data) {
             if (data) {
                 // User is signed in.
-                //console.log(displayName)
+                
+               
+            
             } else {
                 // No user is signed in.
                 
                 location.replace("login.html")
             }
             });
+
+            
     </script>  
   
 </body>

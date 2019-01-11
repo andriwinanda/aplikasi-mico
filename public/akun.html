@@ -144,33 +144,40 @@
 <script src="js/script.js"></script>        
  <script>
         
-        
-        // var app = new Vue({
-        //     el: '#app',
-        //     data: {
-                
-        //         nama: name,
-        //         email : email,
-        //         hp: noHp,
-        //         alamat: "jermal6"
-                
-        //     }
-        // })
+       
         
         firebase.auth().onAuthStateChanged(function(data) {
             if (data) {
                 // User is signed in.
                 
-                document.getElementById('nama').innerHTML  = data.displayName;
-                document.getElementById('namanya').innerHTML  = data.displayName;
-                document.getElementById('email').innerHTML = data.email
-                phoneNumber = data.phoneNumber
+                phoneNumber = data.phoneNumber;
+                displayName = data.displayName
+                uid = data.uid
+                document.getElementById('nama').innerHTML  = displayName;
+                document.getElementById('namanya').innerHTML  = displayName;
+                document.getElementById('email').innerHTML = uid;
+
+
+                function writeUserData(uid, displayName, email) {
+                    firebase.database().ref('users/' + uid).set({
+                        username: uid,
+                        displayName : displayName,
+                        email: email,
+                    }).then(function(){
+                        console.log("berhasil")
+                    }).catch(function(){
+                        console.log("Error")
+                    })
+                    
+                }
                 //console.log(displayName)
             } else {
                 // No user is signed in.
                 console.log("tidak ada data")
             }
-            });
+        });
+        
+        
           
        
     

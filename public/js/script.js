@@ -12,7 +12,10 @@ $('.ui.checkbox')
         storageBucket: "aplikasi-mico.appspot.com",
         messagingSenderId: "125777822204"
     };
+    
     firebase.initializeApp(config);
+    var database = firebase.database();
+
     var email = document.getElementById('email');
     var password = document.getElementById('password');
     var login_btn = document.getElementById('login');
@@ -21,20 +24,20 @@ $('.ui.checkbox')
     var errMes = document.getElementById('errMes');
     
     
-    
            
             var auth = firebase.auth();
 
             function regist_act(){
                 auth.createUserWithEmailAndPassword(email.value, password.value)
                     .then(function(data){
-                        return data.updateProfile({displayName: document.getElementById("nama").value , 
+                        return data.updateProfile({
+                            displayName: document.getElementById("nama").value, 
                             phoneNumber: document.getElementById("noHp").value
                         }).then(function() {
                             // Update successful.
-                            alert("Data Sukses")
                             
-                            location.replace("login.html")
+                            
+                            location.replace("registerSuccess.html")
                         }).catch(function(error) {
                             // An error happened.
                             alert("Data Gagal")
@@ -71,6 +74,9 @@ $('.ui.checkbox')
             }
 
       
+            //Database
+            
+            
 
               
               
